@@ -1,0 +1,20 @@
+﻿using DesignPatters.PatternsComportamental.Command.Botao.Abstracao;
+using DesignPatters.PatternsComportamental.Command.Botao.Receptor;
+
+namespace DesignPatters.PatternsComportamental.Command.Botao.Concret
+{
+    internal class SalvarConcretComand : BotaoComandAbstract
+    {
+        public SalvarConcretComand(EditorCommand receptor) : base(receptor) { }
+        public override void Desfazer()
+        {
+            _receptor.Apagar();
+        }
+
+        public override void Executar()
+        {
+            _receptor.Salvar();
+        }
+
+    }
+}
