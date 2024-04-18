@@ -5,6 +5,9 @@ using DesignPatters.PatternsCriacao.PatternsAbstractFactory;
 using ClientFactoryMethod = DesignPatters.PatternsCriacao.FactoryMethod.Client;
 using ClientAbstractFactory = DesignPatters.PatternsCriacao.PatternsAbstractFactory.Client;
 using ClientSingleton = DesignPatters.PatternsCriacao.Singleton.Client;
+using ClientBuilder = DesignPatters.PatternsCriacao.Builder.Client;
+using DesignPatters.PatternsCriacao.Prototype;
+using DesignPatters.PatternsEstrutural.Adapter;
 
 class Program
 {
@@ -13,7 +16,9 @@ class Program
         // ExecutarPatternsCommand();
         // ExecutarPatternsFactoryMethod();
         // ExecutarPatternsFactoryMethod();
-        ExecutarPatternsSingleton();
+        // ExecutarPatternsSingleton();
+        //ExecutarPatternsBuilders();
+        ExecutarPatternsAdapter();
 
 
     }
@@ -40,5 +45,20 @@ class Program
 
         var Botao = new BotaoApplication();
         Botao.ExecutarComandosBotao();
+    }
+    public static void ExecutarPatternsBuilders()
+    {
+        var client = new ClientBuilder();
+        client.ConsumirDadosEtudios();
+    }
+    public static void ExecutarPatternsPrototype()
+    {
+        var client = new Cliente();
+        client.ConsumirDadosEtudios();
+    }
+    public static void ExecutarPatternsAdapter()
+    {
+        var cloud = new cloudComputing();
+        cloud.ProcessarContas("setembro");
     }
 }
