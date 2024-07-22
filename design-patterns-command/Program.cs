@@ -6,8 +6,14 @@ using ClientFactoryMethod = DesignPatters.PatternsCriacao.FactoryMethod.Client;
 using ClientAbstractFactory = DesignPatters.PatternsCriacao.PatternsAbstractFactory.Client;
 using ClientSingleton = DesignPatters.PatternsCriacao.Singleton.Client;
 using ClientBuilder = DesignPatters.PatternsCriacao.Builder.Client;
+using ClientFlyweight = DesignPatters.PatternsEstrutural.Flyweight.Client;
+using ClientBridge = DesignPatters.PatternsEstrutural.Bridge.Client;
+using ClientComposite = DesignPatters.PatternsEstrutural.Composite.Client;
 using DesignPatters.PatternsCriacao.Prototype;
 using DesignPatters.PatternsEstrutural.Adapter;
+using DesignPatters.PatternsEstrutural.Bridge.Abstracao;
+using DesignPatters.PatternsEstrutural.Bridge.Implementacao;
+using System;
 
 class Program
 {
@@ -17,8 +23,10 @@ class Program
         // ExecutarPatternsFactoryMethod();
         // ExecutarPatternsFactoryMethod();
         // ExecutarPatternsSingleton();
-        //ExecutarPatternsBuilders();
-        ExecutarPatternsAdapter();
+        // ExecutarPatternsBuilders();
+        // ExecutarPatternsAdapter();
+        // ExecutarPatternsBridge();
+         ExecutarPatternsComposite();
 
 
     }
@@ -61,4 +69,60 @@ class Program
         var cloud = new cloudComputing();
         cloud.ProcessarContas("setembro");
     }
-}
+    public static void ExecutarFlyweights()
+    {
+        ClientFlyweight client = new ClientFlyweight();
+        client.ConsumirFlyweights();
+    }
+
+    public static void ExecutarPatternsBridge()
+    {
+        ClientBridge client;
+        Random random;
+
+        while (true)
+        {
+            client = new ClientBridge();
+            random = new Random();
+
+            if (random.Next(2) == 1)
+            {
+                client.Material = new CanetaEsferografica();
+            }
+            else
+            {
+                client.Material = new PincelMarcador();
+            }
+
+
+            if (random.Next(1, 3) == 1)
+            {
+                client.Material.CorImplementacao = new Azul();
+            }
+            else if (random.Next(1, 3) == 2)
+            {
+                client.Material.CorImplementacao = new Preto();
+            }
+            else
+            {
+                client.Material.CorImplementacao = new Vermelha();
+            }
+
+            client.ConsultarCanetasPinceisNoEstoque();
+
+            Console.WriteLine("Pressione <Enter> para continuar ou qualquer tecla para finalizar...");
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
+
+            if (keyInfo.KeyChar != 13)
+                break;
+
+        }
+
+    }
+    public static void ExecutarPatternsComposite()
+        {
+            ClientComposite client = new ClientComposite();
+            client.EfetuarCompra();
+        }
+
+    }
