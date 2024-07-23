@@ -9,11 +9,13 @@ using ClientBuilder = DesignPatters.PatternsCriacao.Builder.Client;
 using ClientFlyweight = DesignPatters.PatternsEstrutural.Flyweight.Client;
 using ClientBridge = DesignPatters.PatternsEstrutural.Bridge.Client;
 using ClientComposite = DesignPatters.PatternsEstrutural.Composite.Client;
+using ClientDecorator = DesignPatters.PatternsEstrutural.Decorator.Client;
 using DesignPatters.PatternsCriacao.Prototype;
 using DesignPatters.PatternsEstrutural.Adapter;
 using DesignPatters.PatternsEstrutural.Bridge.Abstracao;
 using DesignPatters.PatternsEstrutural.Bridge.Implementacao;
 using System;
+using DesignPatters.PatternsEstrutural.Facade;
 
 class Program
 {
@@ -26,9 +28,17 @@ class Program
         // ExecutarPatternsBuilders();
         // ExecutarPatternsAdapter();
         // ExecutarPatternsBridge();
-         ExecutarPatternsComposite();
+        // ExecutarPatternsComposite();
+        // ExecutarPatternsDecorator();
+         ExecutarPatternsFacade();
 
 
+    }
+
+    private static void ExecutarPatternsFacade()
+    {
+        FacadeManager facade = new FacadeManager();
+        facade.ExecutarComplexidade();
     }
 
     public static void ExecutarPatternsFactoryMethod()
@@ -120,9 +130,14 @@ class Program
 
     }
     public static void ExecutarPatternsComposite()
-        {
-            ClientComposite client = new ClientComposite();
-            client.EfetuarCompra();
-        }
-
+    {
+        ClientComposite client = new ClientComposite();
+        client.EfetuarCompra();
     }
+
+    public static void ExecutarPatternsDecorator()
+    {
+        ClientDecorator client = new ClientDecorator();
+        client.ConsumirServicos();
+    }
+}

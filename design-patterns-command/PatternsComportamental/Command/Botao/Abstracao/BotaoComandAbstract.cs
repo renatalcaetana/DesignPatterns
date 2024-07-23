@@ -9,7 +9,7 @@ namespace DesignPatters.PatternsComportamental.Command.Botao.Abstracao
         {
             _receptor = receptor;
         }
-
+         
         public abstract void Executar();
         public abstract void Desfazer();
     }
