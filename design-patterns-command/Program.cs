@@ -10,6 +10,7 @@ using ClientFlyweight = DesignPatters.PatternsEstrutural.Flyweight.Client;
 using ClientBridge = DesignPatters.PatternsEstrutural.Bridge.Client;
 using ClientComposite = DesignPatters.PatternsEstrutural.Composite.Client;
 using ClientDecorator = DesignPatters.PatternsEstrutural.Decorator.Client;
+using ClientProxy = DesignPatters.PatternsEstrutural.Proxy.Client;
 using DesignPatters.PatternsCriacao.Prototype;
 using DesignPatters.PatternsEstrutural.Adapter;
 using DesignPatters.PatternsEstrutural.Bridge.Abstracao;
@@ -30,11 +31,16 @@ class Program
         // ExecutarPatternsBridge();
         // ExecutarPatternsComposite();
         // ExecutarPatternsDecorator();
-         ExecutarPatternsFacade();
-
+         //ExecutarPatternsFacade();
+        ExecutarPatternsProxy();
 
     }
 
+    private static void ExecutarPatternsProxy()
+    {
+        ClientProxy proxy = new ClientProxy();
+        proxy.TentativaConexaoClientVPN();
+    }
     private static void ExecutarPatternsFacade()
     {
         FacadeManager facade = new FacadeManager();
