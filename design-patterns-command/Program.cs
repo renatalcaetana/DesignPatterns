@@ -11,6 +11,7 @@ using ClientBridge = DesignPatters.PatternsEstrutural.Bridge.Client;
 using ClientComposite = DesignPatters.PatternsEstrutural.Composite.Client;
 using ClientDecorator = DesignPatters.PatternsEstrutural.Decorator.Client;
 using ClientProxy = DesignPatters.PatternsEstrutural.Proxy.Client;
+using ClientTemplate = DesignPatters.PatternsComportamental.TemplateMethod.Client;
 using DesignPatters.PatternsCriacao.Prototype;
 using DesignPatters.PatternsEstrutural.Adapter;
 using DesignPatters.PatternsEstrutural.Bridge.Abstracao;
@@ -31,11 +32,19 @@ class Program
         // ExecutarPatternsBridge();
         // ExecutarPatternsComposite();
         // ExecutarPatternsDecorator();
-         //ExecutarPatternsFacade();
-        ExecutarPatternsProxy();
+        // ExecutarPatternsFacade();
+        // ExecutarPatternsProxy();
+        ExecutarPatternsTemplate();
 
     }
 
+    private static void ExecutarPatternsTemplate()
+    {
+        ClientTemplate template = new ClientTemplate();
+        //template.ConsumirEndpointXml();
+
+        template.ConsumirEndpointJson();
+    }
     private static void ExecutarPatternsProxy()
     {
         ClientProxy proxy = new ClientProxy();
