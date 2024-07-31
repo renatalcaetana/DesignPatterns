@@ -18,6 +18,7 @@ using DesignPatters.PatternsEstrutural.Bridge.Abstracao;
 using DesignPatters.PatternsEstrutural.Bridge.Implementacao;
 using System;
 using DesignPatters.PatternsEstrutural.Facade;
+using DesignPatters.PatternsComportamental.Interpreter.Jumanji;
 
 class Program
 {
@@ -34,8 +35,15 @@ class Program
         // ExecutarPatternsDecorator();
         // ExecutarPatternsFacade();
         // ExecutarPatternsProxy();
-        ExecutarPatternsTemplate();
+        // ExecutarPatternsProxy();
+        ExecutarPatternsInterpreter();
 
+    }
+
+    private static void ExecutarPatternsInterpreter()
+    {
+        ApresentaPopup apresentaPopup = new ApresentaPopup();
+        apresentaPopup.ApresentarHabilidadesPopup();
     }
 
     private static void ExecutarPatternsTemplate()
