@@ -19,6 +19,7 @@ using DesignPatters.PatternsEstrutural.Bridge.Implementacao;
 using System;
 using DesignPatters.PatternsEstrutural.Facade;
 using DesignPatters.PatternsComportamental.Interpreter.Jumanji;
+using DesignPatters.PatternsComportamental.Observer;
 
 class Program
 {
@@ -36,9 +37,17 @@ class Program
         // ExecutarPatternsFacade();
         // ExecutarPatternsProxy();
         // ExecutarPatternsProxy();
-        ExecutarPatternsInterpreter();
+        //ExecutarPatternsInterpreter();
+        ExecutarPatternsObserver();
 
     }
+
+    private static void ExecutarPatternsObserver()
+    {
+        var sendEmail = new SendEmail();
+        sendEmail.EnviarEmail();
+    }
+
 
     private static void ExecutarPatternsInterpreter()
     {
