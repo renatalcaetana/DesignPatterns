@@ -20,6 +20,7 @@ using System;
 using DesignPatters.PatternsEstrutural.Facade;
 using DesignPatters.PatternsComportamental.Interpreter.Jumanji;
 using DesignPatters.PatternsComportamental.Observer;
+using DesignPatters.PatternsComportamental.Visitor;
 
 class Program
 {
@@ -38,9 +39,17 @@ class Program
         // ExecutarPatternsProxy();
         // ExecutarPatternsProxy();
         //ExecutarPatternsInterpreter();
-        ExecutarPatternsObserver();
+        // ExecutarPatternsObserver();
+        ExecutarPatternsVisitor();
 
     }
+
+    private static void ExecutarPatternsVisitor()
+    {
+        var fiscal = new Fiscal();
+        fiscal.CalcularImpostos();
+    }
+
 
     private static void ExecutarPatternsObserver()
     {
