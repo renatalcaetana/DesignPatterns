@@ -17,12 +17,15 @@ namespace DesignPatters.PatternsComportamental.Command.Robo
             mover.ParaFrente = 1000;
             controle.Comandos.Enqueue(mover);
 
-            RotacionarCommand rotacionar = new RotacionarCommand(robo);
+            RotacionarCommand rotacionar = new RotacionarCommand   (robo);
             rotacionar.rotacionarParaEsquerda = 45;
             controle.Comandos.Enqueue(rotacionar);
 
             EscavarCommand escavar = new EscavarCommand(robo);
+
             escavar.ColherMaterial = true;
+
+
             controle.Comandos.Enqueue(escavar);
 
             controle.ExecutarComandos();

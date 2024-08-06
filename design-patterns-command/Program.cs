@@ -21,6 +21,7 @@ using DesignPatters.PatternsEstrutural.Facade;
 using DesignPatters.PatternsComportamental.Interpreter.Jumanji;
 using DesignPatters.PatternsComportamental.Observer;
 using DesignPatters.PatternsComportamental.Visitor;
+using DesignPatters.PatternsComportamental.Strategy;
 
 class Program
 {
@@ -40,16 +41,21 @@ class Program
         // ExecutarPatternsProxy();
         //ExecutarPatternsInterpreter();
         // ExecutarPatternsObserver();
-        ExecutarPatternsVisitor();
+        //ExecutarPatternsVisitor();
+        ExecutarPatternsStrategy();
 
     }
 
+    private static void ExecutarPatternsStrategy()
+    {
+        var taxa = new RotinaTaxaServicos();
+        taxa.ExecutarRotina();
+    }
     private static void ExecutarPatternsVisitor()
     {
         var fiscal = new Fiscal();
         fiscal.CalcularImpostos();
     }
-
 
     private static void ExecutarPatternsObserver()
     {
