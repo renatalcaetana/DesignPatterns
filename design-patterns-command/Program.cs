@@ -22,6 +22,7 @@ using DesignPatters.PatternsComportamental.Interpreter.Jumanji;
 using DesignPatters.PatternsComportamental.Observer;
 using DesignPatters.PatternsComportamental.Visitor;
 using DesignPatters.PatternsComportamental.Strategy;
+using DesignPatters.PatternsComportamental.ChainOfResponsability;
 
 class Program
 {
@@ -42,7 +43,8 @@ class Program
         //ExecutarPatternsInterpreter();
         // ExecutarPatternsObserver();
         //ExecutarPatternsVisitor();
-        ExecutarPatternsStrategy();
+        //ExecutarPatternsStrategy();
+        ExecutarPatternsChainOfResponsability();
 
     }
 
@@ -50,6 +52,11 @@ class Program
     {
         var taxa = new RotinaTaxaServicos();
         taxa.ExecutarRotina();
+    }
+    private static void ExecutarPatternsChainOfResponsability()
+    {
+        var sender = new Sender();
+        sender.RealizarCheckout();
     }
     private static void ExecutarPatternsVisitor()
     {
