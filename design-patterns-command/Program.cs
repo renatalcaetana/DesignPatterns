@@ -12,6 +12,7 @@ using ClientComposite = DesignPatters.PatternsEstrutural.Composite.Client;
 using ClientDecorator = DesignPatters.PatternsEstrutural.Decorator.Client;
 using ClientProxy = DesignPatters.PatternsEstrutural.Proxy.Client;
 using ClientTemplate = DesignPatters.PatternsComportamental.TemplateMethod.Client;
+using ClientIterator = DesignPatters.PatternsComportamental.Iterator.Client;
 using DesignPatters.PatternsCriacao.Prototype;
 using DesignPatters.PatternsEstrutural.Adapter;
 using DesignPatters.PatternsEstrutural.Bridge.Abstracao;
@@ -23,6 +24,8 @@ using DesignPatters.PatternsComportamental.Observer;
 using DesignPatters.PatternsComportamental.Visitor;
 using DesignPatters.PatternsComportamental.Strategy;
 using DesignPatters.PatternsComportamental.ChainOfResponsability;
+using System.Net.Http.Headers;
+using DesignPatters.PatternsComportamental.Mediator;
 
 class Program
 {
@@ -44,8 +47,23 @@ class Program
         // ExecutarPatternsObserver();
         //ExecutarPatternsVisitor();
         //ExecutarPatternsStrategy();
-        ExecutarPatternsChainOfResponsability();
+        //ExecutarPatternsChainOfResponsability();
+        //ExecutarPatternsIterator();
+        ExecutarPatternsMediator();
 
+    }
+
+    private static void ExecutarPatternsMediator()
+    {
+        var chat = new Chat();
+        chat.Conversar();
+
+    }
+
+    private static void ExecutarPatternsIterator()
+    {
+        var iterator = new ClientIterator();
+        iterator.ConsumirEstruturaDados();
     }
 
     private static void ExecutarPatternsStrategy()
