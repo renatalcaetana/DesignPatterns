@@ -26,6 +26,7 @@ using DesignPatters.PatternsComportamental.Strategy;
 using DesignPatters.PatternsComportamental.ChainOfResponsability;
 using System.Net.Http.Headers;
 using DesignPatters.PatternsComportamental.Mediator;
+using DesignPatters.PatternsComportamental.Memento;
 
 class Program
 {
@@ -49,8 +50,15 @@ class Program
         //ExecutarPatternsStrategy();
         //ExecutarPatternsChainOfResponsability();
         //ExecutarPatternsIterator();
-        ExecutarPatternsMediator();
+        //ExecutarPatternsMediator();
+        ExecutarPatternsMemento();
 
+    }
+
+    private static void ExecutarPatternsMemento()
+    {
+        var videoCassete = new VideoCassete();
+        videoCassete.ExecutarAcaoVideo();
     }
 
     private static void ExecutarPatternsMediator()
