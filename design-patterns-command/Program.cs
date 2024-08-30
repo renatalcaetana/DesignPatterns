@@ -13,6 +13,7 @@ using ClientDecorator = DesignPatters.PatternsEstrutural.Decorator.Client;
 using ClientProxy = DesignPatters.PatternsEstrutural.Proxy.Client;
 using ClientTemplate = DesignPatters.PatternsComportamental.TemplateMethod.Client;
 using ClientIterator = DesignPatters.PatternsComportamental.Iterator.Client;
+using ClientState = DesignPatters.PatternsComportamental.State.Client;
 using DesignPatters.PatternsCriacao.Prototype;
 using DesignPatters.PatternsEstrutural.Adapter;
 using DesignPatters.PatternsEstrutural.Bridge.Abstracao;
@@ -51,8 +52,15 @@ class Program
         //ExecutarPatternsChainOfResponsability();
         //ExecutarPatternsIterator();
         //ExecutarPatternsMediator();
-        ExecutarPatternsMemento();
+        //ExecutarPatternsMemento();
+        ExecutarPatternsState();
 
+    }
+
+    private static void ExecutarPatternsState()
+    {
+        var state = new ClientState();
+        state.ExecutarContext();
     }
 
     private static void ExecutarPatternsMemento()
