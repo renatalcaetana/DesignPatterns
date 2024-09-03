@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "design-patterns-command\DesignPatterns.csproj", "{D9A4E647-8659-4F45-8757-DA329676168B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriptografiaSha512", "CriptografiaSha512\CriptografiaSha512.csproj", "{EB17F1D0-6013-473B-9891-63F9D775A81E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D9A4E647-8659-4F45-8757-DA329676168B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9A4E647-8659-4F45-8757-DA329676168B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9A4E647-8659-4F45-8757-DA329676168B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB17F1D0-6013-473B-9891-63F9D775A81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB17F1D0-6013-473B-9891-63F9D775A81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB17F1D0-6013-473B-9891-63F9D775A81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB17F1D0-6013-473B-9891-63F9D775A81E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
